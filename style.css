@@ -1,35 +1,80 @@
 body{
-    padding: 0;
     margin: 0;
-}
-.navbar{
-    padding: 8px 14px;
-    background: #263343;
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 12px;
-}
-.navbar--logo{
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    color: #d49466;
-}
-.navbar--menu{
-    display: flex;
     padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 a{
     text-decoration: none;
     color: white;
 }
-.navba--menu li{
-    list-style: none;
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px;
 }
-    .navbar--icons{
+.navbar--logo{
+    font-size: 24px;
+    color: white;
+}
+.navbar--logo i{
+    color: #d49466;
+}
+.navbar--menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.navbar--menu li{
+    padding: 8px 12px; /* 마우스를 올렸을 때 사용 할 수 있는 백그라운드 영역을 넓게 하게 위해  padding 을 사용함*/
+}
+.navbar--menu li:hover{
+    background-color: #d49466;
+    border-radius: 4px;
+}
+.navbar--icons{
+    list-style: none;
+    color: white;
+    display: flex;
     padding: 0;
 }
+.navbar--icons li{
+    padding: 8px 12px;
+}
 
-i{
-    color: white;
+.navbar--toogleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+@media screen and (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar--menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar--menu li{
+        width: 100%;
+        text-align: center;
+    }
+    .navbar--icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar--toogleBtn{
+        display: block;
+    }
+    .navbar--menu.active,
+    .navbar--icons.active
 }
